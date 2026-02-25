@@ -25,10 +25,10 @@ const Navbar = () => {
         className="relative flex items-center bg-[hsl(220_20%_12%/0.55)] backdrop-blur-[40px] border border-[hsl(0_0%_100%/0.12)] shadow-[0_0_0_0.5px_hsl(0_0%_100%/0.06),0_8px_32px_hsl(0_0%_0%/0.3),0_2px_8px_hsl(0_0%_0%/0.2),inset_0_1px_0_hsl(0_0%_100%/0.08)] overflow-hidden"
         style={{ borderRadius: 24 }}
         animate={{
-          paddingLeft: collapsed ? 8 : 8,
-          paddingRight: collapsed ? 8 : 8,
-          paddingTop: collapsed ? 6 : 8,
-          paddingBottom: collapsed ? 6 : 8,
+          paddingLeft: collapsed ? 10 : 14,
+          paddingRight: collapsed ? 10 : 14,
+          paddingTop: collapsed ? 7 : 10,
+          paddingBottom: collapsed ? 7 : 10,
           gap: collapsed ? 8 : 12,
         }}
       >
