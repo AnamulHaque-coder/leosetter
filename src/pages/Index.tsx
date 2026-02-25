@@ -4,10 +4,12 @@ import FeaturesSection from "@/components/FeaturesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
+import AnimatedBackground from "@/components/AnimatedBackground";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden animated-bg">
+      <AnimatedBackground />
       <Navbar />
       <HeroSection />
       <FeaturesSection />
