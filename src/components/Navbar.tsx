@@ -29,7 +29,7 @@ const Navbar = () => {
           paddingRight: collapsed ? 8 : 8,
           paddingTop: collapsed ? 6 : 8,
           paddingBottom: collapsed ? 6 : 8,
-          gap: collapsed ? 4 : 6,
+          gap: collapsed ? 8 : 12,
         }}
       >
         {/* Logo — always visible */}
