@@ -25,11 +25,11 @@ const Navbar = () => {
         className="relative flex items-center bg-[hsl(220_20%_12%/0.55)] backdrop-blur-[40px] border border-[hsl(0_0%_100%/0.12)] shadow-[0_0_0_0.5px_hsl(0_0%_100%/0.06),0_8px_32px_hsl(0_0%_0%/0.3),0_2px_8px_hsl(0_0%_0%/0.2),inset_0_1px_0_hsl(0_0%_100%/0.08)] overflow-hidden"
         style={{ borderRadius: 24 }}
         animate={{
-          paddingLeft: collapsed ? 6 : 6,
-          paddingRight: collapsed ? 6 : 6,
-          paddingTop: collapsed ? 4 : 6,
-          paddingBottom: collapsed ? 4 : 6,
-          gap: collapsed ? 2 : 4,
+          paddingLeft: collapsed ? 8 : 8,
+          paddingRight: collapsed ? 8 : 8,
+          paddingTop: collapsed ? 6 : 8,
+          paddingBottom: collapsed ? 6 : 8,
+          gap: collapsed ? 4 : 6,
         }}
       >
         {/* Logo — always visible */}
@@ -38,11 +38,11 @@ const Navbar = () => {
           href="#"
           className="flex items-center rounded-[16px] font-semibold tracking-tight text-foreground hover:bg-[hsl(0_0%_100%/0.08)] transition-colors whitespace-nowrap"
           animate={{
-            fontSize: collapsed ? 12 : 13,
-            paddingLeft: collapsed ? 10 : 16,
-            paddingRight: collapsed ? 10 : 16,
-            paddingTop: collapsed ? 4 : 6,
-            paddingBottom: collapsed ? 4 : 6,
+            fontSize: collapsed ? 13 : 14,
+            paddingLeft: collapsed ? 12 : 18,
+            paddingRight: collapsed ? 12 : 18,
+            paddingTop: collapsed ? 6 : 8,
+            paddingBottom: collapsed ? 6 : 8,
           }}
           transition={spring}
         >
@@ -74,7 +74,7 @@ const Navbar = () => {
               >
                 <motion.a
                   href="#features"
-                  className="px-3 py-1.5 rounded-[16px] text-[13px] text-[hsl(0_0%_100%/0.55)] hover:text-foreground hover:bg-[hsl(0_0%_100%/0.08)] transition-all whitespace-nowrap"
+                   className="px-4 py-2 rounded-[16px] text-sm text-[hsl(0_0%_100%/0.55)] hover:text-foreground hover:bg-[hsl(0_0%_100%/0.08)] transition-all whitespace-nowrap"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.97 }}
                 >
@@ -82,7 +82,7 @@ const Navbar = () => {
                 </motion.a>
                 <motion.a
                   href="#how-it-works"
-                  className="px-3 py-1.5 rounded-[16px] text-[13px] text-[hsl(0_0%_100%/0.55)] hover:text-foreground hover:bg-[hsl(0_0%_100%/0.08)] transition-all whitespace-nowrap"
+                  className="px-4 py-2 rounded-[16px] text-sm text-[hsl(0_0%_100%/0.55)] hover:text-foreground hover:bg-[hsl(0_0%_100%/0.08)] transition-all whitespace-nowrap"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.97 }}
                 >
@@ -111,18 +111,18 @@ const Navbar = () => {
           rel="noopener noreferrer"
           className="flex items-center rounded-[16px] font-medium text-foreground bg-[hsl(0_0%_100%/0.1)] hover:bg-[hsl(0_0%_100%/0.16)] transition-colors whitespace-nowrap"
           animate={{
-            fontSize: collapsed ? 12 : 13,
-            paddingLeft: collapsed ? 8 : 14,
-            paddingRight: collapsed ? 8 : 14,
-            paddingTop: collapsed ? 4 : 6,
-            paddingBottom: collapsed ? 4 : 6,
-            gap: collapsed ? 4 : 6,
+            fontSize: collapsed ? 13 : 14,
+            paddingLeft: collapsed ? 10 : 16,
+            paddingRight: collapsed ? 10 : 16,
+            paddingTop: collapsed ? 6 : 8,
+            paddingBottom: collapsed ? 6 : 8,
+            gap: collapsed ? 5 : 6,
           }}
           transition={spring}
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.96 }}
         >
-          <Github className="w-3.5 h-3.5 flex-shrink-0" />
+          <Github className="w-4 h-4 flex-shrink-0" />
           <AnimatePresence mode="popLayout">
             {!collapsed && (
               <motion.span
