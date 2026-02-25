@@ -2,7 +2,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 const steps = [
-  { step: "01", title: "Open your image", description: "Drag & drop or select any supported image file." },
+  { step: "01", title: "Open your image", description: "Select any supported image file." },
   { step: "02", title: "Inspect & edit", description: "Browse all metadata fields and modify what you need." },
   { step: "03", title: "Export", description: "Save the updated image with your changes applied instantly." },
 ];
