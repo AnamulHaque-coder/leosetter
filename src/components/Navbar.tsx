@@ -52,17 +52,7 @@ const Navbar = () => {
         {/* Expanded content */}
         <AnimatePresence mode="popLayout">
           {!collapsed && (
-            <>
-              {/* Separator dot */}
-              <motion.div
-                key="dot1"
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0 }}
-                transition={spring}
-                className="w-[3px] h-[3px] rounded-full bg-[hsl(0_0%_100%/0.2)] hidden sm:block flex-shrink-0"
-              />
-
+             <>
               {/* Nav links */}
               <motion.div
                 key="links"
@@ -80,7 +70,6 @@ const Navbar = () => {
                 >
                   Features
                 </motion.a>
-                <div className="w-[3px] h-[3px] rounded-full bg-[hsl(0_0%_100%/0.2)] flex-shrink-0" />
                 <motion.a
                   href="#how-it-works"
                   className="px-4 py-2 rounded-[16px] text-sm text-[hsl(0_0%_100%/0.55)] hover:text-foreground hover:bg-[hsl(0_0%_100%/0.08)] transition-all whitespace-nowrap"
@@ -90,16 +79,6 @@ const Navbar = () => {
                   How it works
                 </motion.a>
               </motion.div>
-
-              {/* Separator dot */}
-              <motion.div
-                key="dot2"
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0 }}
-                transition={spring}
-                className="w-[3px] h-[3px] rounded-full bg-[hsl(0_0%_100%/0.2)] flex-shrink-0"
-              />
             </>
           )}
         </AnimatePresence>
