@@ -74,12 +74,13 @@ const Navbar = () => {
               >
                 <motion.a
                   href="#features"
-                   className="px-4 py-2 rounded-[16px] text-sm text-[hsl(0_0%_100%/0.55)] hover:text-foreground hover:bg-[hsl(0_0%_100%/0.08)] transition-all whitespace-nowrap"
+                  className="px-4 py-2 rounded-[16px] text-sm text-[hsl(0_0%_100%/0.55)] hover:text-foreground hover:bg-[hsl(0_0%_100%/0.08)] transition-all whitespace-nowrap"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.97 }}
                 >
                   Features
                 </motion.a>
+                <div className="w-[3px] h-[3px] rounded-full bg-[hsl(0_0%_100%/0.2)] flex-shrink-0" />
                 <motion.a
                   href="#how-it-works"
                   className="px-4 py-2 rounded-[16px] text-sm text-[hsl(0_0%_100%/0.55)] hover:text-foreground hover:bg-[hsl(0_0%_100%/0.08)] transition-all whitespace-nowrap"
