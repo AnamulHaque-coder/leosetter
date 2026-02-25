@@ -85,7 +85,7 @@ const HeroSection = () => {
             whileHover={{ scale: 1.05, boxShadow: "0 0 60px hsl(350 85% 62% / 0.3)" }}
             whileTap={{ scale: 0.98 }}
           >
-            Get Started
+            Download
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </motion.a>
           <motion.a
