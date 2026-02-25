@@ -82,7 +82,7 @@ const HeroSection = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="group glass-strong glow-primary rounded-2xl px-8 py-4 text-base font-semibold text-foreground flex items-center gap-2 transition-all"
-            whileHover={{ scale: 1.05, boxShadow: "0 0 60px hsl(210 100% 62% / 0.3)" }}
+            whileHover={{ scale: 1.05, boxShadow: "0 0 60px hsl(350 85% 62% / 0.3)" }}
             whileTap={{ scale: 0.98 }}
           >
             Get Started
