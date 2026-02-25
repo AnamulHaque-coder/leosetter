@@ -11,7 +11,7 @@ const Navbar = () => {
     >
       <div className="glass-strong rounded-2xl px-6 py-3 flex items-center justify-between">
         <a href="#" className="text-lg font-bold tracking-tight text-foreground">
-          Meta<span className="text-gradient">Edit</span>
+          Leo<span className="text-gradient">Setter</span>
         </a>
 
         <div className="hidden sm:flex items-center gap-6 text-sm text-muted-foreground">
@@ -20,7 +20,7 @@ const Navbar = () => {
         </div>
 
         <motion.a
-          href="https://github.com/your-username/metaedit"
+          href="https://github.com/AHJ32/LeoSetter"
           target="_blank"
           rel="noopener noreferrer"
           className="glass-card flex items-center gap-2 px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors rounded-xl"
