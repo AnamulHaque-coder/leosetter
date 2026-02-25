@@ -17,13 +17,13 @@ const Navbar = () => {
       initial={{ y: -30, opacity: 0, filter: "blur(10px)" }}
       animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
       transition={{ duration: 0.8, ease: [0.25, 0.4, 0.25, 1] }}
-      className="fixed top-3 left-1/2 -translate-x-1/2 z-50"
+      className="fixed top-3 left-0 right-0 z-50 flex justify-center"
     >
       <motion.div
         layout
         transition={spring}
-        className="relative flex items-center bg-[hsl(0_0%_0%/0.85)] backdrop-blur-2xl shadow-[0_0_0_0.5px_hsl(0_0%_100%/0.08),0_4px_24px_hsl(0_0%_0%/0.4),0_1px_3px_hsl(0_0%_0%/0.3)] overflow-hidden"
-        style={{ borderRadius: 22 }}
+        className="relative flex items-center bg-[hsl(220_20%_12%/0.55)] backdrop-blur-[40px] border border-[hsl(0_0%_100%/0.12)] shadow-[0_0_0_0.5px_hsl(0_0%_100%/0.06),0_8px_32px_hsl(0_0%_0%/0.3),0_2px_8px_hsl(0_0%_0%/0.2),inset_0_1px_0_hsl(0_0%_100%/0.08)] overflow-hidden"
+        style={{ borderRadius: 24 }}
         animate={{
           paddingLeft: collapsed ? 6 : 6,
           paddingRight: collapsed ? 6 : 6,
