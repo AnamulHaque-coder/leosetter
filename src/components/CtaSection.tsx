@@ -45,7 +45,7 @@ const CtaSection = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="glass-card glow-primary rounded-2xl px-8 py-4 font-semibold text-foreground flex items-center gap-2"
-              whileHover={{ scale: 1.05, boxShadow: "0 0 60px hsl(210 100% 62% / 0.35)" }}
+              whileHover={{ scale: 1.05, boxShadow: "0 0 60px hsl(350 85% 62% / 0.35)" }}
               whileTap={{ scale: 0.97 }}
             >
               <Github className="w-5 h-5" />
