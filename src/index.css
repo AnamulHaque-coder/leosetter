@@ -83,6 +83,8 @@
     backdrop-filter: blur(var(--glass-blur));
     -webkit-backdrop-filter: blur(var(--glass-blur));
     border: 1px solid hsl(var(--glass-border));
+    will-change: transform;
+    transform: translateZ(0);
   }
 
   .glass-strong {
@@ -90,6 +92,8 @@
     backdrop-filter: blur(var(--glass-blur-heavy));
     -webkit-backdrop-filter: blur(var(--glass-blur-heavy));
     border: 1px solid hsl(var(--glass-border-strong));
+    will-change: transform;
+    transform: translateZ(0);
   }
 
   .glass-card {
@@ -98,7 +102,9 @@
     -webkit-backdrop-filter: blur(var(--glass-blur));
     border: 1px solid hsl(var(--glass-border));
     border-radius: var(--radius);
-    transition: all 0.3s ease;
+    transition: background 0.3s ease, border-color 0.3s ease;
+    will-change: transform;
+    transform: translateZ(0);
   }
 
   .glass-card:hover {
@@ -108,6 +114,7 @@
 
   .mesh-gradient {
     background-image: var(--gradient-mesh);
+    will-change: transform;
   }
 
   .animated-bg {
@@ -116,32 +123,20 @@
 
   @keyframes meshShift {
     0% {
-      background:
-        radial-gradient(ellipse 80% 60% at 20% 30%, hsl(350 80% 50% / 0.18) 0%, transparent 60%),
-        radial-gradient(ellipse 70% 50% at 75% 15%, hsl(280 70% 50% / 0.14) 0%, transparent 55%),
-        radial-gradient(ellipse 60% 70% at 60% 75%, hsl(30 90% 55% / 0.12) 0%, transparent 55%),
-        radial-gradient(ellipse 50% 40% at 40% 60%, hsl(320 75% 55% / 0.1) 0%, transparent 50%);
+      opacity: 0.7;
+      transform: translate(0, 0) scale(1);
     }
     33% {
-      background:
-        radial-gradient(ellipse 70% 70% at 65% 50%, hsl(30 90% 55% / 0.16) 0%, transparent 55%),
-        radial-gradient(ellipse 80% 50% at 25% 70%, hsl(350 80% 50% / 0.15) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 60% at 80% 30%, hsl(320 75% 55% / 0.12) 0%, transparent 50%),
-        radial-gradient(ellipse 50% 50% at 15% 20%, hsl(280 70% 50% / 0.1) 0%, transparent 50%);
+      opacity: 0.6;
+      transform: translate(5%, -3%) scale(1.05);
     }
     66% {
-      background:
-        radial-gradient(ellipse 60% 80% at 50% 20%, hsl(320 75% 55% / 0.17) 0%, transparent 55%),
-        radial-gradient(ellipse 70% 60% at 30% 80%, hsl(30 90% 55% / 0.13) 0%, transparent 55%),
-        radial-gradient(ellipse 80% 50% at 70% 60%, hsl(280 70% 50% / 0.14) 0%, transparent 60%),
-        radial-gradient(ellipse 50% 50% at 50% 40%, hsl(350 80% 50% / 0.1) 0%, transparent 50%);
+      opacity: 0.75;
+      transform: translate(-3%, 5%) scale(0.98);
     }
     100% {
-      background:
-        radial-gradient(ellipse 75% 55% at 40% 45%, hsl(280 70% 50% / 0.16) 0%, transparent 55%),
-        radial-gradient(ellipse 65% 65% at 70% 70%, hsl(350 80% 50% / 0.14) 0%, transparent 60%),
-        radial-gradient(ellipse 55% 75% at 20% 25%, hsl(320 75% 55% / 0.12) 0%, transparent 55%),
-        radial-gradient(ellipse 60% 45% at 85% 45%, hsl(30 90% 55% / 0.1) 0%, transparent 50%);
+      opacity: 0.65;
+      transform: translate(2%, -2%) scale(1.02);
     }
   }
 

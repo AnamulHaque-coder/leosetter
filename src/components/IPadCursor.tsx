@@ -4,8 +4,8 @@ import { motion, useSpring, useMotionValue } from "framer-motion";
 const INTERACTIVE_SELECTOR =
   "a, button, [role='button'], input, select, textarea, summary, label[for], [data-cursor-hover]";
 
-const MAGNETIC_RANGE = 80; // px distance to start attracting
-const MAGNETIC_STRENGTH = 0.35; // 0-1, how strongly it pulls
+const MAGNETIC_RANGE = 80;
+const MAGNETIC_STRENGTH = 0.35;
 
 interface HoverTarget {
   x: number;
@@ -31,38 +31,15 @@ const IPadCursor = () => {
   const opacity = useSpring(0, { stiffness: 300, damping: 30 });
   const scale = useSpring(1, magneticSpring);
   const mousePos = useRef({ x: 0, y: 0 });
+  const rafId = useRef<number>(0);
+  const pendingMove = useRef<{ x: number; y: number; target: EventTarget | null } | null>(null);
 
-  const findNearestInteractive = useCallback((x: number, y: number) => {
-    const elements = document.querySelectorAll(INTERACTIVE_SELECTOR);
-    let nearest: { el: HTMLElement; dist: number; rect: DOMRect } | null = null;
-
-    elements.forEach((el) => {
-      const rect = (el as HTMLElement).getBoundingClientRect();
-      const cx = rect.left + rect.width / 2;
-      const cy = rect.top + rect.height / 2;
-      const dist = Math.sqrt((x - cx) ** 2 + (y - cy) ** 2);
-      // Account for element size — measure from edge, not center
-      const edgeDist = Math.max(
-        0,
-        dist - Math.max(rect.width, rect.height) / 2
-      );
-      if (edgeDist < MAGNETIC_RANGE && (!nearest || edgeDist < nearest.dist)) {
-        nearest = { el: el as HTMLElement, dist: edgeDist, rect };
-      }
-    });
-    return nearest;
-  }, []);
-
-  const handleMouseMove = useCallback(
-    (e: MouseEvent) => {
-      const mx = e.clientX;
-      const my = e.clientY;
+  const processMove = useCallback(
+    (mx: number, my: number, eventTarget: EventTarget | null) => {
       mousePos.current = { x: mx, y: my };
-
       if (!visible) setVisible(true);
 
-      // Check if directly hovering
-      const target = (e.target as HTMLElement)?.closest?.(INTERACTIVE_SELECTOR) as HTMLElement | null;
+      const target = (eventTarget as HTMLElement)?.closest?.(INTERACTIVE_SELECTOR) as HTMLElement | null;
 
       if (target) {
         const rect = target.getBoundingClientRect();
@@ -88,57 +65,45 @@ const IPadCursor = () => {
       } else {
         setHovering(null);
 
-        // Check for nearby magnetic targets
-        const nearest = findNearestInteractive(mx, my);
-
-        if (nearest) {
-          const { rect, dist } = nearest;
-          const cx = rect.left + rect.width / 2;
-          const cy = rect.top + rect.height / 2;
-          // Stronger pull as we get closer
-          const proximity = 1 - dist / MAGNETIC_RANGE;
-          const pull = proximity * MAGNETIC_STRENGTH;
-
-          const pullX = mx + (cx - mx) * pull;
-          const pullY = my + (cy - my) * pull;
-
-          cursorX.set(pullX);
-          cursorY.set(pullY);
-
-          // Scale up slightly as we approach
-          const cursorScale = 1 + proximity * 0.4;
-          width.set(20 * cursorScale);
-          height.set(20 * cursorScale);
-          radius.set(10 * cursorScale);
-          opacity.set(0.6 + proximity * 0.15);
-          scale.set(1);
-        } else {
-          cursorX.set(mx);
-          cursorY.set(my);
-          width.set(20);
-          height.set(20);
-          radius.set(10);
-          opacity.set(0.6);
-          scale.set(1);
-        }
+        // Skip expensive nearest-interactive search — just move the dot cursor
+        cursorX.set(mx);
+        cursorY.set(my);
+        width.set(20);
+        height.set(20);
+        radius.set(10);
+        opacity.set(0.6);
+        scale.set(1);
       }
     },
-    [visible, findNearestInteractive, cursorX, cursorY, width, height, radius, opacity, scale]
+    [visible, cursorX, cursorY, width, height, radius, opacity, scale]
   );
 
   useEffect(() => {
-    window.addEventListener("mousemove", handleMouseMove);
+    const onMouseMove = (e: MouseEvent) => {
+      pendingMove.current = { x: e.clientX, y: e.clientY, target: e.target };
+      if (!rafId.current) {
+        rafId.current = requestAnimationFrame(() => {
+          rafId.current = 0;
+          const p = pendingMove.current;
+          if (p) processMove(p.x, p.y, p.target);
+        });
+      }
+    };
+
     const handleLeave = () => setVisible(false);
     const handleEnter = () => setVisible(true);
+
+    window.addEventListener("mousemove", onMouseMove, { passive: true });
     document.addEventListener("mouseleave", handleLeave);
     document.addEventListener("mouseenter", handleEnter);
 
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mousemove", onMouseMove);
       document.removeEventListener("mouseleave", handleLeave);
       document.removeEventListener("mouseenter", handleEnter);
+      if (rafId.current) cancelAnimationFrame(rafId.current);
     };
-  }, [handleMouseMove]);
+  }, [processMove]);
 
   // Hide on touch devices
   const [isTouch, setIsTouch] = useState(false);
@@ -150,7 +115,7 @@ const IPadCursor = () => {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 z-[9999] pointer-events-none mix-blend-normal"
+      className="fixed top-0 left-0 z-[9999] pointer-events-none"
       style={{
         x: animX,
         y: animY,
@@ -161,6 +126,7 @@ const IPadCursor = () => {
         translateX: "-50%",
         translateY: "-50%",
         scale,
+        willChange: "transform",
       }}
     >
       <motion.div

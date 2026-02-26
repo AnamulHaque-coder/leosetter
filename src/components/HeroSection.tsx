@@ -14,27 +14,26 @@ const HeroSection = () => {
 
   return (
     <section ref={ref} className="relative min-h-screen flex items-center justify-center px-6 pt-24 pb-16 overflow-hidden">
-      {/* Parallax mesh gradient background */}
-      <motion.div className="absolute inset-0 mesh-gradient" style={{ y: bgY }} />
+      <motion.div className="absolute inset-0 mesh-gradient" style={{ y: bgY, willChange: "transform" }} />
 
-      {/* Parallax floating orbs */}
+      {/* Parallax floating orbs — GPU composited */}
       <motion.div
         className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-primary/10 blur-[100px] animate-float"
-        style={{ scale: orbScale, opacity: orbOpacity }}
+        style={{ scale: orbScale, opacity: orbOpacity, willChange: "transform, opacity" }}
       />
       <motion.div
         className="absolute bottom-1/4 right-1/4 w-48 h-48 rounded-full bg-accent/10 blur-[80px] animate-float"
-        style={{ scale: orbScale, opacity: orbOpacity, animationDelay: '2s' }}
+        style={{ scale: orbScale, opacity: orbOpacity, willChange: "transform, opacity", animationDelay: '2s' }}
       />
       <motion.div
         className="absolute top-1/3 right-1/3 w-32 h-32 rounded-full bg-primary/5 blur-[60px] animate-float"
-        style={{ scale: orbScale, opacity: orbOpacity, animationDelay: '4s' }}
+        style={{ scale: orbScale, opacity: orbOpacity, willChange: "transform, opacity", animationDelay: '4s' }}
       />
 
-      <motion.div className="relative z-10 max-w-5xl mx-auto text-center" style={{ y: contentY }}>
+      <motion.div className="relative z-10 max-w-5xl mx-auto text-center" style={{ y: contentY, willChange: "transform" }}>
         <motion.div
-          initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <div className="glass-card inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 text-sm text-muted-foreground">
@@ -44,8 +43,8 @@ const HeroSection = () => {
         </motion.div>
 
         <motion.h1
-          initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.4, 0.25, 1] }}
           className="text-5xl sm:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6"
         >
@@ -62,8 +61,8 @@ const HeroSection = () => {
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.5 }}
           className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
         >
@@ -100,18 +99,18 @@ const HeroSection = () => {
 
         {/* Glass demo card with parallax */}
         <motion.div
-          initial={{ opacity: 0, y: 60, filter: "blur(10px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          initial={{ opacity: 0, y: 60 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.8, ease: [0.25, 0.4, 0.25, 1] }}
-          style={{ y: cardY }}
+          style={{ y: cardY, willChange: "transform" }}
           className="mt-16 max-w-3xl mx-auto"
         >
           <div className="glass-strong rounded-3xl p-1">
             <div className="glass rounded-[1.25rem] p-6 sm:p-8">
               <div className="flex items-center gap-3 mb-6">
-                <motion.div className="w-3 h-3 rounded-full bg-destructive/60" animate={{ scale: [1, 1.2, 1] }} transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }} />
-                <motion.div className="w-3 h-3 rounded-full bg-primary/40" animate={{ scale: [1, 1.2, 1] }} transition={{ duration: 2, repeat: Infinity, repeatDelay: 3, delay: 0.2 }} />
-                <motion.div className="w-3 h-3 rounded-full bg-accent/40" animate={{ scale: [1, 1.2, 1] }} transition={{ duration: 2, repeat: Infinity, repeatDelay: 3, delay: 0.4 }} />
+                <div className="w-3 h-3 rounded-full bg-destructive/60" />
+                <div className="w-3 h-3 rounded-full bg-primary/40" />
+                <div className="w-3 h-3 rounded-full bg-accent/40" />
                 <span className="ml-2 text-xs text-muted-foreground font-mono">metadata-editor</span>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -119,7 +118,7 @@ const HeroSection = () => {
                   { icon: <Image className="w-5 h-5 text-primary" />, label: "Format", value: "JPEG / TIFF", delay: 1 },
                   { icon: <FileText className="w-5 h-5 text-accent" />, label: "EXIF Data", value: "10 fields found", delay: 1.15 },
                   { icon: <Zap className="w-5 h-5 text-primary" />, label: "Status", value: "Ready to edit", delay: 1.3 },
-                ].map((item, i) => (
+                ].map((item) => (
                   <motion.div
                     key={item.label}
                     initial={{ opacity: 0, y: 15 }}
