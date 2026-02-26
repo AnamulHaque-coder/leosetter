@@ -20,7 +20,8 @@ const magneticSpring = { stiffness: 350, damping: 30, mass: 0.5 };
 
 const IPadCursor = () => {
   const [hovering, setHovering] = useState<HoverTarget | null>(null);
-  const [visible, setVisible] = useState(false);
+  const visibleRef = useRef(false);
+  const [, forceRender] = useState(0);
   const cursorX = useMotionValue(0);
   const cursorY = useMotionValue(0);
   const animX = useSpring(cursorX, springConfig);
@@ -34,10 +35,17 @@ const IPadCursor = () => {
   const rafId = useRef<number>(0);
   const pendingMove = useRef<{ x: number; y: number; target: EventTarget | null } | null>(null);
 
+  const setVisible = useCallback((v: boolean) => {
+    if (visibleRef.current !== v) {
+      visibleRef.current = v;
+      forceRender((n) => n + 1);
+    }
+  }, []);
+
   const processMove = useCallback(
     (mx: number, my: number, eventTarget: EventTarget | null) => {
       mousePos.current = { x: mx, y: my };
-      if (!visible) setVisible(true);
+      setVisible(true);
 
       const target = (eventTarget as HTMLElement)?.closest?.(INTERACTIVE_SELECTOR) as HTMLElement | null;
 
@@ -64,8 +72,6 @@ const IPadCursor = () => {
         scale.set(1);
       } else {
         setHovering(null);
-
-        // Skip expensive nearest-interactive search — just move the dot cursor
         cursorX.set(mx);
         cursorY.set(my);
         width.set(20);
@@ -75,7 +81,7 @@ const IPadCursor = () => {
         scale.set(1);
       }
     },
-    [visible, cursorX, cursorY, width, height, radius, opacity, scale]
+    [setVisible, cursorX, cursorY, width, height, radius, opacity, scale]
   );
 
   useEffect(() => {
@@ -91,19 +97,23 @@ const IPadCursor = () => {
     };
 
     const handleLeave = () => setVisible(false);
-    const handleEnter = () => setVisible(true);
+    const handleEnter = (e: MouseEvent) => {
+      // Immediately update position on re-enter so cursor appears at the right spot
+      pendingMove.current = { x: e.clientX, y: e.clientY, target: e.target };
+      processMove(e.clientX, e.clientY, e.target);
+    };
 
     window.addEventListener("mousemove", onMouseMove, { passive: true });
     document.addEventListener("mouseleave", handleLeave);
-    document.addEventListener("mouseenter", handleEnter);
+    document.addEventListener("mouseenter", handleEnter as EventListener);
 
     return () => {
       window.removeEventListener("mousemove", onMouseMove);
       document.removeEventListener("mouseleave", handleLeave);
-      document.removeEventListener("mouseenter", handleEnter);
+      document.removeEventListener("mouseenter", handleEnter as EventListener);
       if (rafId.current) cancelAnimationFrame(rafId.current);
     };
-  }, [processMove]);
+  }, [processMove, setVisible]);
 
   // Hide on touch devices
   const [isTouch, setIsTouch] = useState(false);
@@ -122,7 +132,7 @@ const IPadCursor = () => {
         width,
         height,
         borderRadius: radius,
-        opacity: visible ? 1 : 0,
+        opacity: visibleRef.current ? 1 : 0,
         translateX: "-50%",
         translateY: "-50%",
         scale,
