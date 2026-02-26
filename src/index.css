@@ -74,10 +74,10 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-    cursor: none;
   }
 
-  *, *::before, *::after {
+  /* Force hide cursor everywhere to prevent flickering on window enter/leave */
+  *, *::before, *::after, html, body {
     cursor: none !important;
   }
 }
