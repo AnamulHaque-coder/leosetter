@@ -80,7 +80,7 @@ const About = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="w-24 h-24 rounded-full mx-auto mb-6 overflow-hidden"
           >
-            <img src={profilePhoto} alt="Anamul Haque" className="w-full h-full object-cover" />
+            <img src={profilePhoto} alt="Anamul Haque" className="w-full h-full object-cover" loading="eager" decoding="async" width={96} height={96} />
           </motion.div>
 
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
