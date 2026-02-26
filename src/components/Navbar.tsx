@@ -1,6 +1,6 @@
-import { motion, AnimatePresence, useMotionValueEvent, useScroll } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Github } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
 const spring = { type: "spring" as const, stiffness: 400, damping: 30 };
@@ -8,12 +8,17 @@ const spring = { type: "spring" as const, stiffness: 400, damping: 30 };
 const Navbar = () => {
   const [scrolledPast, setScrolledPast] = useState(false);
   const [hovered, setHovered] = useState(false);
-  const { scrollY } = useScroll();
   const navigate = useNavigate();
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    setScrolledPast(latest > 80);
-  });
+  const handleScroll = useCallback(() => {
+    setScrolledPast(window.scrollY > 80);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // check initial position
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
 
   const collapsed = scrolledPast && !hovered;
 
