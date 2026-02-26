@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import FeaturesSection from "@/components/FeaturesSection";
@@ -8,6 +9,10 @@ import AnimatedBackground from "@/components/AnimatedBackground";
 import IPadCursor from "@/components/IPadCursor";
 
 const Index = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background overflow-x-hidden animated-bg">
       <AnimatedBackground />
