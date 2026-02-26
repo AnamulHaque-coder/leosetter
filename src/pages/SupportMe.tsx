@@ -48,7 +48,7 @@ const SupportMe = () => {
             </div>
             <h2 className="text-xl font-semibold text-foreground">Bkash</h2>
             <div className="space-y-2 text-sm text-muted-foreground">
-              <p><span className="text-foreground font-medium">Bkash Number:</span> 01XXX-XXXXXX</p>
+              <p><span className="text-foreground font-medium">Bkash Number:</span> <p><span className="text-foreground font-medium">Bkash Number:</span> 01630591092</p></p>
               <p><span className="text-foreground font-medium">Account Type:</span> Personal</p>
               <p className="text-xs mt-3 text-muted-foreground/70">
                 Send money to the number above and include your name as reference.
