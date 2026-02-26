@@ -78,7 +78,7 @@ const HeroSection = () => {
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <motion.a
-            href="https://github.com/AHJ32/LeoSetter"
+            href="https://github.com/AHJ32/LeoSetter/releases/"
             target="_blank"
             rel="noopener noreferrer"
             className="group glass-strong glow-primary rounded-2xl px-8 py-4 text-base font-semibold text-foreground flex items-center gap-2 transition-all"
