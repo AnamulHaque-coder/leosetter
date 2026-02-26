@@ -36,11 +36,10 @@ const SupportMe = () => {
               <h2 className="text-xl font-semibold text-foreground">Bank Transfer</h2>
             </div>
             <div className="space-y-2 text-sm text-muted-foreground">
-              <p><span className="text-foreground font-medium">Bank Name:</span> Your Bank Name</p>
-              <p><span className="text-foreground font-medium">Account Name:</span> Your Account Name</p>
-              <p><span className="text-foreground font-medium">Account Number:</span> XXXX-XXXX-XXXX</p>
-              <p><span className="text-foreground font-medium">Branch:</span> Your Branch</p>
-              <p><span className="text-foreground font-medium">Routing Number:</span> XXXXXXXXX</p>
+              <p><span className="text-foreground font-medium">Bank Name:</span> Eastern Bank PLC</p>
+              <p><span className="text-foreground font-medium">Account Name:</span> ANAMUL HAQUE</p>
+              <p><span className="text-foreground font-medium">Account No:</span> 0251440011024</p>
+              <p><span className="text-foreground font-medium">Branch:</span> Khulshi, Chittagong, Bangladesh</p>
             </div>
           </div>
 
