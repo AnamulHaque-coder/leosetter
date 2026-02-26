@@ -26,7 +26,7 @@ const Footer = () => {
       </div>
       <p className="text-xs text-muted-foreground/50 mt-4">
         Special thanks to{" "}
-        <a href="https://ready.bd/" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold no-underline hover:text-primary/80 transition-colors">ready.bd</a>
+        <a href="https://ready.bd/" target="_blank" rel="noopener noreferrer" className="text-gradient font-semibold no-underline hover:opacity-80 transition-opacity">ready.bd</a>
       </p>
     </footer>
   );
