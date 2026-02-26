@@ -117,7 +117,7 @@ const HeroSection = () => {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {[
                   { icon: <Image className="w-5 h-5 text-primary" />, label: "Format", value: "JPEG / TIFF", delay: 1 },
-                  { icon: <FileText className="w-5 h-5 text-accent" />, label: "EXIF Data", value: "42 fields found", delay: 1.15 },
+                  { icon: <FileText className="w-5 h-5 text-accent" />, label: "EXIF Data", value: "10 fields found", delay: 1.15 },
                   { icon: <Zap className="w-5 h-5 text-primary" />, label: "Status", value: "Ready to edit", delay: 1.3 },
                 ].map((item, i) => (
                   <motion.div
