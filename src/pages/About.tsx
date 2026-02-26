@@ -3,6 +3,7 @@ import { Github, Facebook, Linkedin, MessageCircle, ArrowLeft, Code, Rocket, Spa
 import { Link } from "react-router-dom";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import IPadCursor from "@/components/IPadCursor";
+import profilePhoto from "@/assets/profile-photo.jpg";
 
 const socials = [
   {
@@ -71,9 +72,9 @@ const About = () => {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="w-24 h-24 rounded-full mx-auto mb-6 glass-strong flex items-center justify-center"
+            className="w-24 h-24 rounded-full mx-auto mb-6 overflow-hidden"
           >
-            <span className="text-3xl font-bold text-gradient">AH</span>
+            <img src={profilePhoto} alt="Anamul Haque" className="w-full h-full object-cover" />
           </motion.div>
 
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
