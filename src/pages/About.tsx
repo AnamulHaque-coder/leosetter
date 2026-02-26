@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Github, Facebook, Linkedin, ArrowLeft, Code, Rocket, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import AnimatedBackground from "@/components/AnimatedBackground";
-import IPadCursor from "@/components/IPadCursor";
 import profilePhoto from "@/assets/profile-photo.jpg";
 
 const DiscordIcon = ({ className }: { className?: string }) => (
@@ -55,7 +54,6 @@ const About = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden animated-bg">
       <AnimatedBackground />
-      <IPadCursor />
 
       <div className="relative z-10 max-w-3xl mx-auto px-6 py-16">
         <Link
