@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
-import { ArrowLeft, Building2, Smartphone } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import IPadCursor from "@/components/IPadCursor";
 import bkashQr from "@/assets/bkash-qr.jpg";
+import eblLogo from "@/assets/ebl-logo.png";
+import bkashLogo from "@/assets/bkash-logo.svg";
 
 const SupportMe = () => {
   return (
@@ -30,8 +32,8 @@ const SupportMe = () => {
           {/* Bank Transfer */}
           <div className="glass-card rounded-2xl p-6 flex flex-col gap-4">
             <div className="flex items-center gap-3 mb-1">
-              <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                <Building2 className="w-5 h-5 text-primary" />
+              <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 overflow-hidden p-1.5">
+                <img src={eblLogo} alt="Eastern Bank Limited" className="w-full h-full object-contain brightness-0 invert opacity-80" />
               </div>
               <h2 className="text-xl font-semibold text-foreground">Bank Transfer</h2>
             </div>
@@ -46,8 +48,8 @@ const SupportMe = () => {
           {/* Bkash */}
           <div className="glass-card rounded-2xl p-6 flex flex-col gap-4">
             <div className="flex items-center gap-3 mb-1">
-              <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
-                <Smartphone className="w-5 h-5 text-accent" />
+              <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 overflow-hidden p-1.5">
+                <img src={bkashLogo} alt="bKash" className="w-full h-full object-contain brightness-0 invert opacity-80" />
               </div>
               <h2 className="text-xl font-semibold text-foreground">Bkash</h2>
             </div>
