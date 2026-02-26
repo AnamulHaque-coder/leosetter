@@ -7,10 +7,10 @@ const AnimatedBackground = () => {
   return (
     <motion.div
       className="fixed inset-0 z-0 pointer-events-none"
-      style={{ y, height: "130vh" }}
+      style={{ y, height: "130vh", willChange: "transform" }}
     >
       <div
-        className="absolute inset-0 opacity-70 animate-mesh"
+        className="absolute inset-0 opacity-70"
         style={{
           background: [
             "radial-gradient(ellipse 80% 60% at 20% 30%, hsl(350 80% 50% / 0.18) 0%, transparent 60%)",
@@ -19,6 +19,7 @@ const AnimatedBackground = () => {
             "radial-gradient(ellipse 50% 40% at 40% 60%, hsl(320 75% 55% / 0.1) 0%, transparent 50%)",
           ].join(", "),
           animation: "meshShift 20s ease-in-out infinite alternate",
+          willChange: "transform, opacity",
         }}
       />
     </motion.div>
