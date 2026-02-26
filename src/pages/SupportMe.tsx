@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft, Building2, Smartphone } from "lucide-react";
-import { QRCodeSVG } from "qrcode.react";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import IPadCursor from "@/components/IPadCursor";
+import bkashQr from "@/assets/bkash-qr.jpg";
 
 const SupportMe = () => {
   return (
@@ -56,15 +56,15 @@ const SupportMe = () => {
               <p><span className="text-foreground font-medium">Number:</span> 01630591092</p>
               <p><span className="text-foreground font-medium">Account Type:</span> Personal</p>
             </div>
-            <div className="rounded-xl p-3 bg-white/5 border border-white/10 flex justify-center">
-              <QRCodeSVG
-                value="01630591092"
-                size={160}
-                bgColor="transparent"
-                fgColor="hsl(330, 80%, 65%)"
-                level="H"
-                className="rounded-md"
-              />
+            <div className="rounded-xl overflow-hidden p-3 bg-white/5 border border-white/10 flex justify-center max-w-[200px] mx-auto w-full">
+              <div className="overflow-hidden rounded-md" style={{ aspectRatio: '1/1', width: '100%' }}>
+                <img
+                  src={bkashQr}
+                  alt="Bkash QR Code for 01630591092"
+                  className="w-full object-cover object-top"
+                  style={{ height: '155%' }}
+                />
+              </div>
             </div>
             <p className="text-xs text-center text-muted-foreground/70">
               Scan with the Bkash app to send money
