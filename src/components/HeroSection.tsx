@@ -10,7 +10,7 @@ const HeroSection = () => {
   const orbScale = useTransform(scrollYProgress, [0, 1], [1, 1.5]);
   const orbOpacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
   const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
-  const cardY = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
+  const cardY = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
 
   return (
     <section ref={ref} className="relative min-h-screen flex items-center justify-center px-6 pt-24 pb-16">
