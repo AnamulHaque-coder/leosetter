@@ -18,7 +18,7 @@ const AnimatedRoutes = () => {
   const location = useLocation();
   return (
     <>
-      <Navbar />
+      {location.pathname !== "/about" && location.pathname !== "/support" && <Navbar />}
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<PageTransition><Index /></PageTransition>} />
