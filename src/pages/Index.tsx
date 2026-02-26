@@ -13,15 +13,17 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background overflow-x-hidden w-full max-w-[100vw] animated-bg">
-      <AnimatedBackground />
+    <>
       <Navbar />
-      <HeroSection />
-      <FeaturesSection />
-      <HowItWorksSection />
-      <CtaSection />
-      <Footer />
-    </div>
+      <div className="min-h-screen bg-background overflow-x-hidden w-full max-w-[100vw] animated-bg">
+        <AnimatedBackground />
+        <HeroSection />
+        <FeaturesSection />
+        <HowItWorksSection />
+        <CtaSection />
+        <Footer />
+      </div>
+    </>
   );
 };
 
