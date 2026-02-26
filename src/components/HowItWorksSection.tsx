@@ -13,7 +13,7 @@ const HowItWorksSection = () => {
   const meshY = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
 
   return (
-    <section id="how-it-works" ref={ref} className="relative py-24 px-6 overflow-hidden">
+    <section id="how-it-works" ref={ref} className="relative py-24 px-6 overflow-hidden snap-section">
       <motion.div className="absolute inset-0 mesh-gradient opacity-50" style={{ y: meshY }} />
       
       {/* Parallax decorative orb */}

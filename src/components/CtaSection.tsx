@@ -9,7 +9,7 @@ const CtaSection = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
 
   return (
-    <section ref={ref} className="relative py-24 px-6">
+    <section ref={ref} className="relative py-24 px-6 snap-section">
       <div className="max-w-3xl mx-auto">
         <motion.div
           style={{ scale, opacity }}
