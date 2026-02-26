@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
@@ -14,7 +13,6 @@ const Index = () => {
 
   return (
     <>
-      <Navbar />
       <div className="min-h-screen bg-background overflow-x-hidden w-full max-w-[100vw] animated-bg">
         <AnimatedBackground />
         <HeroSection />
