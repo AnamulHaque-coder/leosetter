@@ -7,14 +7,12 @@ const Footer = () => {
       <div className="glass-card rounded-2xl max-w-4xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
         <span>© {new Date().getFullYear()} LeoSetter. All rights reserved.</span>
         <div className="flex items-center gap-4">
-          <a
-            href="https://github.com/AHJ32/LeoSetter"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/about"
             className="hover:text-foreground transition-colors"
           >
-            GitHub
-          </a>
+            About
+          </Link>
           <Link
             to="/support"
             className="inline-flex items-center gap-1.5 hover:text-foreground transition-colors"
