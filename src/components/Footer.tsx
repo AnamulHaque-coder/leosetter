@@ -8,12 +8,6 @@ const Footer = () => {
         <span>© {new Date().getFullYear()} LeoSetter. All rights reserved.</span>
         <div className="flex items-center gap-4">
           <Link
-            to="/about"
-            className="hover:text-foreground transition-colors"
-          >
-            About
-          </Link>
-          <Link
             to="/support"
             className="inline-flex items-center gap-1.5 hover:text-foreground transition-colors"
           >
