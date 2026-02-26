@@ -1,6 +1,7 @@
 import { motion, AnimatePresence, useMotionValueEvent, useScroll } from "framer-motion";
 import { Github } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const spring = { type: "spring" as const, stiffness: 400, damping: 30 };
 
@@ -8,6 +9,7 @@ const Navbar = () => {
   const [scrolledPast, setScrolledPast] = useState(false);
   const [hovered, setHovered] = useState(false);
   const { scrollY } = useScroll();
+  const navigate = useNavigate();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setScrolledPast(latest > 80);
@@ -83,6 +85,14 @@ const Navbar = () => {
                 >
                   How it works
                 </motion.a>
+                <motion.button
+                  onClick={() => navigate('/about')}
+                  className="px-4 py-2 rounded-[16px] text-sm text-[hsl(0_0%_100%/0.55)] hover:text-foreground hover:bg-[hsl(0_0%_100%/0.08)] transition-all whitespace-nowrap"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.97 }}
+                >
+                  About
+                </motion.button>
               </motion.div>
             </>
           )}
