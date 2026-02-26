@@ -13,7 +13,7 @@ const HeroSection = () => {
   const cardY = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
 
   return (
-    <section ref={ref} className="relative min-h-screen flex items-center justify-center px-6 pt-24 pb-16 snap-section">
+    <section ref={ref} className="relative min-h-screen flex items-center justify-center px-6 pt-24 pb-32 snap-section">
       <motion.div className="absolute inset-0 mesh-gradient" style={{ y: bgY, willChange: "transform" }} />
 
       {/* Parallax floating orbs — GPU composited */}
