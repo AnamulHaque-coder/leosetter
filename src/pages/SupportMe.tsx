@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, Building2, Smartphone } from "lucide-react";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import IPadCursor from "@/components/IPadCursor";
+import bkashQr from "@/assets/bkash-qr.jpg";
 
 const SupportMe = () => {
   return (
@@ -42,18 +43,29 @@ const SupportMe = () => {
           </div>
 
           {/* Bkash */}
-          <div className="glass-card rounded-2xl p-6 flex flex-col gap-4">
-            <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
-              <Smartphone className="w-6 h-6 text-accent" />
+          <div className="glass-card rounded-2xl p-6 flex flex-col gap-4 md:col-span-2">
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
+                <Smartphone className="w-6 h-6 text-accent" />
+              </div>
+              <div>
+                <h2 className="text-xl font-semibold text-foreground mb-2">Bkash</h2>
+                <div className="space-y-1 text-sm text-muted-foreground">
+                  <p><span className="text-foreground font-medium">Number:</span> 01630591092</p>
+                  <p><span className="text-foreground font-medium">Account Type:</span> Personal</p>
+                </div>
+              </div>
             </div>
-            <h2 className="text-xl font-semibold text-foreground">Bkash</h2>
-            <div className="space-y-2 text-sm text-muted-foreground">
-              <p><span className="text-foreground font-medium">Bkash Number:</span> <p><span className="text-foreground font-medium">Bkash Number:</span> 01630591092</p></p>
-              <p><span className="text-foreground font-medium">Account Type:</span> Personal</p>
-              <p className="text-xs mt-3 text-muted-foreground/70">
-                Send money to the number above and include your name as reference.
-              </p>
+            <div className="rounded-xl overflow-hidden bg-white/90 p-4 flex flex-col items-center gap-2 max-w-[260px] mx-auto w-full">
+              <img
+                src={bkashQr}
+                alt="Bkash QR Code for 01630591092"
+                className="w-full h-auto rounded-lg"
+              />
             </div>
+            <p className="text-xs text-center text-muted-foreground/70">
+              Scan the QR code with the Bkash app or send money to the number above.
+            </p>
           </div>
         </div>
       </div>
