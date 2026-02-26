@@ -8,7 +8,7 @@ const features = [
   { icon: <Trash2 className="w-6 h-6" />, title: "Strip All Data", description: "Remove all metadata in one click to protect your privacy before sharing." },
   { icon: <Lock className="w-6 h-6" />, title: "Privacy First", description: "Everything runs locally. Your images never leave your machine." },
   { icon: <Cpu className="w-6 h-6" />, title: "Blazing Fast", description: "Optimized processing engine handles large batches without breaking a sweat." },
-  { icon: <FileImage className="w-6 h-6" />, title: "Multi-Format", description: "Supports JPEG, PNG, TIFF, WebP, and more popular image formats." },
+  { icon: <FileImage className="w-6 h-6" />, title: "Multi-Format", description: "Supports JPEG, TIFF, WebP, and more popular image formats." },
 ];
 
 const cardVariants = {
