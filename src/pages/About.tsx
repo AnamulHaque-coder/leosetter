@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
 import { Github, Facebook, Linkedin, MessageCircle, ArrowLeft, Code, Rocket, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import IPadCursor from "@/components/IPadCursor";
 
@@ -48,26 +46,18 @@ const item = {
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-background relative overflow-hidden">
-      <IPadCursor />
+    <div className="min-h-screen bg-background overflow-x-hidden animated-bg">
       <AnimatedBackground />
-      <Navbar />
+      <IPadCursor />
 
-      <main className="relative z-10 px-6 pt-32 pb-16 max-w-3xl mx-auto">
-        {/* Back link */}
-        <motion.div
-          initial={{ opacity: 0, x: -10 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.4 }}
+      <div className="relative z-10 max-w-3xl mx-auto px-6 py-16">
+        <Link
+          to="/"
+          className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-10"
         >
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-10"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Back home
-          </Link>
-        </motion.div>
+          <ArrowLeft className="w-4 h-4" />
+          Back to Home
+        </Link>
 
         {/* Hero section */}
         <motion.div
@@ -138,9 +128,7 @@ const About = () => {
             </motion.a>
           ))}
         </motion.div>
-      </main>
-
-      <Footer />
+      </div>
     </div>
   );
 };
