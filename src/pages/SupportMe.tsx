@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import AnimatedBackground from "@/components/AnimatedBackground";
-import IPadCursor from "@/components/IPadCursor";
+
 import bkashQr from "@/assets/bkash-qr.jpg";
 import eblLogo from "@/assets/ebl-logo.png";
 import bkashLogo from "@/assets/bkash-logo.svg";
@@ -10,7 +10,7 @@ const SupportMe = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden animated-bg">
       <AnimatedBackground />
-      <IPadCursor />
+      
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 py-16">
         <Link
