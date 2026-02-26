@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Github, Facebook, Linkedin, ArrowLeft, Code, Rocket, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
-import Navbar from "@/components/Navbar";
+
 import AnimatedBackground from "@/components/AnimatedBackground";
 import profilePhoto from "@/assets/profile-photo.jpg";
 
@@ -54,7 +54,7 @@ const item = {
 const About = () => {
   return (
     <>
-      <Navbar />
+      
       <div className="min-h-screen bg-background overflow-x-hidden w-full max-w-[100vw] animated-bg">
         <AnimatedBackground />
 
