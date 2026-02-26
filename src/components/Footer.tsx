@@ -25,7 +25,8 @@ const Footer = () => {
         </div>
       </div>
       <p className="text-xs text-muted-foreground/50 mt-4">
-        Special thanks to <span className="text-muted-foreground/70 font-medium">Lovable</span>
+        Special thanks to{" "}
+        <span className="text-muted-foreground/70 font-medium">ready.bd</span>
       </p>
     </footer>
   );
