@@ -5,14 +5,14 @@ import { useRef } from "react";
 const CtaSection = () => {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const scale = useTransform(scrollYProgress, [0, 0.5], [0.92, 1]);
-  const opacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
+  const y = useTransform(scrollYProgress, [0, 0.4], [60, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
 
   return (
     <section ref={ref} className="relative py-24 px-6 snap-section">
       <div className="max-w-3xl mx-auto">
         <motion.div
-          style={{ scale, opacity }}
+          style={{ y, opacity, willChange: "transform, opacity" }}
           className="glass-strong glow-primary rounded-3xl p-10 sm:p-14 text-center"
         >
           <motion.h2
