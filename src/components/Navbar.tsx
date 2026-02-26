@@ -34,7 +34,7 @@ const Navbar = () => {
         transition={spring}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="relative flex items-center bg-[hsl(220_20%_12%/0.55)] backdrop-blur-[40px] border border-[hsl(0_0%_100%/0.12)] shadow-[0_0_0_0.5px_hsl(0_0%_100%/0.06),0_8px_32px_hsl(0_0%_0%/0.3),0_2px_8px_hsl(0_0%_0%/0.2),inset_0_1px_0_hsl(0_0%_100%/0.08)] overflow-visible"
+        className="relative flex items-center bg-[hsl(220_20%_12%/0.55)] backdrop-blur-[40px] border border-[hsl(0_0%_100%/0.12)] shadow-[0_0_0_0.5px_hsl(0_0%_100%/0.06),0_8px_32px_hsl(0_0%_0%/0.3),0_2px_8px_hsl(0_0%_0%/0.2),inset_0_1px_0_hsl(0_0%_100%/0.08)] overflow-hidden"
         style={{ borderRadius: 24 }}
         animate={{
           paddingLeft: collapsed ? 8 : 14,
@@ -46,7 +46,7 @@ const Navbar = () => {
       >
         {/* Logo — always visible */}
         <motion.a
-          layout="position"
+          layout
           href="#"
           className="flex items-center rounded-[16px] font-semibold tracking-tight text-foreground hover:bg-[hsl(0_0%_100%/0.08)] transition-colors whitespace-nowrap"
           animate={{
@@ -105,7 +105,7 @@ const Navbar = () => {
 
         {/* GitHub button — always visible, shrinks when collapsed */}
         <motion.a
-          layout="position"
+          layout
           href="https://github.com/AHJ32/LeoSetter"
           target="_blank"
           rel="noopener noreferrer"
