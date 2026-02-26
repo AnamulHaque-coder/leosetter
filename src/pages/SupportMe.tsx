@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft, Building2, Smartphone } from "lucide-react";
+import { QRCodeSVG } from "qrcode.react";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import IPadCursor from "@/components/IPadCursor";
-import bkashQr from "@/assets/bkash-qr.jpg";
 
 const SupportMe = () => {
   return (
@@ -10,7 +10,7 @@ const SupportMe = () => {
       <AnimatedBackground />
       <IPadCursor />
 
-      <div className="relative z-10 max-w-3xl mx-auto px-6 py-16">
+      <div className="relative z-10 max-w-4xl mx-auto px-6 py-16">
         <Link
           to="/"
           className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-10"
@@ -29,10 +29,12 @@ const SupportMe = () => {
         <div className="grid gap-6 md:grid-cols-2">
           {/* Bank Transfer */}
           <div className="glass-card rounded-2xl p-6 flex flex-col gap-4">
-            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-              <Building2 className="w-6 h-6 text-primary" />
+            <div className="flex items-center gap-3 mb-1">
+              <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                <Building2 className="w-5 h-5 text-primary" />
+              </div>
+              <h2 className="text-xl font-semibold text-foreground">Bank Transfer</h2>
             </div>
-            <h2 className="text-xl font-semibold text-foreground">Bank Transfer</h2>
             <div className="space-y-2 text-sm text-muted-foreground">
               <p><span className="text-foreground font-medium">Bank Name:</span> Your Bank Name</p>
               <p><span className="text-foreground font-medium">Account Name:</span> Your Account Name</p>
@@ -43,30 +45,29 @@ const SupportMe = () => {
           </div>
 
           {/* Bkash */}
-          <div className="glass-card rounded-2xl p-6 flex flex-col gap-4 md:col-span-2">
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
-                <Smartphone className="w-6 h-6 text-accent" />
+          <div className="glass-card rounded-2xl p-6 flex flex-col gap-4">
+            <div className="flex items-center gap-3 mb-1">
+              <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
+                <Smartphone className="w-5 h-5 text-accent" />
               </div>
-              <div>
-                <h2 className="text-xl font-semibold text-foreground mb-2">Bkash</h2>
-                <div className="space-y-1 text-sm text-muted-foreground">
-                  <p><span className="text-foreground font-medium">Number:</span> 01630591092</p>
-                  <p><span className="text-foreground font-medium">Account Type:</span> Personal</p>
-                </div>
-              </div>
+              <h2 className="text-xl font-semibold text-foreground">Bkash</h2>
             </div>
-            <div className="rounded-xl overflow-hidden bg-white/90 p-4 max-w-[220px] mx-auto w-full">
-              <div className="overflow-hidden rounded-lg" style={{ aspectRatio: '1/1' }}>
-                <img
-                  src={bkashQr}
-                  alt="Bkash QR Code for 01630591092"
-                  className="w-full h-[155%] object-cover object-top"
-                />
-              </div>
+            <div className="space-y-2 text-sm text-muted-foreground">
+              <p><span className="text-foreground font-medium">Number:</span> 01630591092</p>
+              <p><span className="text-foreground font-medium">Account Type:</span> Personal</p>
+            </div>
+            <div className="rounded-xl p-3 bg-white/5 border border-white/10 flex justify-center">
+              <QRCodeSVG
+                value="01630591092"
+                size={160}
+                bgColor="transparent"
+                fgColor="hsl(330, 80%, 65%)"
+                level="H"
+                className="rounded-md"
+              />
             </div>
             <p className="text-xs text-center text-muted-foreground/70">
-              Scan the QR code with the Bkash app or send money to the number above.
+              Scan with the Bkash app to send money
             </p>
           </div>
         </div>
