@@ -13,7 +13,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background overflow-x-hidden animated-bg">
+    <div className="min-h-screen bg-background overflow-x-hidden w-full max-w-[100vw] animated-bg">
       <AnimatedBackground />
       <Navbar />
       <HeroSection />

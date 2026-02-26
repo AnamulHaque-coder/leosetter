@@ -13,7 +13,7 @@ const HeroSection = () => {
   const cardY = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
 
   return (
-    <section ref={ref} className="relative min-h-screen flex items-center justify-center px-6 pt-24 pb-16 overflow-hidden">
+    <section ref={ref} className="relative min-h-screen flex items-center justify-center px-6 pt-24 pb-16">
       <motion.div className="absolute inset-0 mesh-gradient" style={{ y: bgY, willChange: "transform" }} />
 
       {/* Parallax floating orbs — GPU composited */}
@@ -66,7 +66,7 @@ const HeroSection = () => {
           transition={{ duration: 0.9, delay: 0.5 }}
           className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          View, edit, and strip EXIF, IPTC, and XMP metadata from your images. 
+          View, edit, and strip EXIF, IPTC, and XMP metadata from your images.
           Fast, private, and completely open source.
         </motion.p>
 

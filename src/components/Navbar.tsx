@@ -29,14 +29,14 @@ const Navbar = () => {
         transition={spring}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="relative flex items-center bg-[hsl(220_20%_12%/0.55)] backdrop-blur-[40px] border border-[hsl(0_0%_100%/0.12)] shadow-[0_0_0_0.5px_hsl(0_0%_100%/0.06),0_8px_32px_hsl(0_0%_0%/0.3),0_2px_8px_hsl(0_0%_0%/0.2),inset_0_1px_0_hsl(0_0%_100%/0.08)] overflow-hidden"
+        className="relative flex items-center bg-[hsl(220_20%_12%/0.55)] backdrop-blur-[40px] border border-[hsl(0_0%_100%/0.12)] shadow-[0_0_0_0.5px_hsl(0_0%_100%/0.06),0_8px_32px_hsl(0_0%_0%/0.3),0_2px_8px_hsl(0_0%_0%/0.2),inset_0_1px_0_hsl(0_0%_100%/0.08)] overflow-visible"
         style={{ borderRadius: 24 }}
         animate={{
-          paddingLeft: collapsed ? 10 : 14,
-          paddingRight: collapsed ? 10 : 14,
-          paddingTop: collapsed ? 7 : 10,
-          paddingBottom: collapsed ? 7 : 10,
-          gap: collapsed ? 8 : 12,
+          paddingLeft: collapsed ? 8 : 14,
+          paddingRight: collapsed ? 8 : 14,
+          paddingTop: collapsed ? 6 : 10,
+          paddingBottom: collapsed ? 6 : 10,
+          gap: collapsed ? 6 : 12,
         }}
       >
         {/* Logo — always visible */}
@@ -59,7 +59,7 @@ const Navbar = () => {
         {/* Expanded content */}
         <AnimatePresence mode="popLayout">
           {!collapsed && (
-             <>
+            <>
               {/* Nav links */}
               <motion.div
                 key="links"
@@ -107,11 +107,11 @@ const Navbar = () => {
           className="flex items-center rounded-[16px] font-medium text-foreground bg-[hsl(0_0%_100%/0.1)] hover:bg-[hsl(0_0%_100%/0.16)] transition-colors whitespace-nowrap"
           animate={{
             fontSize: collapsed ? 13 : 14,
-            paddingLeft: collapsed ? 10 : 16,
-            paddingRight: collapsed ? 10 : 16,
+            paddingLeft: collapsed ? 12 : 16,
+            paddingRight: collapsed ? 12 : 16,
             paddingTop: collapsed ? 6 : 8,
             paddingBottom: collapsed ? 6 : 8,
-            gap: collapsed ? 5 : 6,
+            gap: collapsed ? 6 : 6,
           }}
           transition={spring}
           whileHover={{ scale: 1.04 }}
