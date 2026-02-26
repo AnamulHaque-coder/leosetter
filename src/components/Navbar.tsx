@@ -5,12 +5,15 @@ import { useState, useEffect } from "react";
 const spring = { type: "spring" as const, stiffness: 400, damping: 30 };
 
 const Navbar = () => {
-  const [collapsed, setCollapsed] = useState(false);
+  const [scrolledPast, setScrolledPast] = useState(false);
+  const [hovered, setHovered] = useState(false);
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    setCollapsed(latest > 80);
+    setScrolledPast(latest > 80);
   });
+
+  const collapsed = scrolledPast && !hovered;
 
   return (
     <motion.nav
@@ -22,6 +25,8 @@ const Navbar = () => {
       <motion.div
         layout
         transition={spring}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
         className="relative flex items-center bg-[hsl(220_20%_12%/0.55)] backdrop-blur-[40px] border border-[hsl(0_0%_100%/0.12)] shadow-[0_0_0_0.5px_hsl(0_0%_100%/0.06),0_8px_32px_hsl(0_0%_0%/0.3),0_2px_8px_hsl(0_0%_0%/0.2),inset_0_1px_0_hsl(0_0%_100%/0.08)] overflow-hidden"
         style={{ borderRadius: 24 }}
         animate={{
