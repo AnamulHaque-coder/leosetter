@@ -26,7 +26,7 @@ const Footer = () => {
       </div>
       <p className="text-xs text-muted-foreground/50 mt-4">
         Special thanks to{" "}
-        <span className="text-muted-foreground/70 font-medium">ready.bd</span>
+        <a href="https://ready.bd/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground/70 font-medium underline hover:text-muted-foreground transition-colors">ready.bd</a>
       </p>
     </footer>
   );
