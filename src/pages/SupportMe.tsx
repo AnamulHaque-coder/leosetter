@@ -33,7 +33,7 @@ const SupportMe = () => {
           <div className="glass-card rounded-2xl p-6 flex flex-col gap-4">
             <div className="flex items-center gap-3 mb-1">
               <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 overflow-hidden p-1.5">
-                <img src={eblLogo} alt="Eastern Bank Limited" className="w-full h-full object-contain brightness-0 invert opacity-80" />
+                <img src={eblLogo} alt="Eastern Bank Limited" className="w-full h-full object-contain brightness-0 invert opacity-80" loading="lazy" decoding="async" width={28} height={28} />
               </div>
               <h2 className="text-xl font-semibold text-foreground">Bank Transfer</h2>
             </div>
@@ -49,7 +49,7 @@ const SupportMe = () => {
           <div className="glass-card rounded-2xl p-6 flex flex-col gap-4">
             <div className="flex items-center gap-3 mb-1">
               <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 overflow-hidden p-1.5">
-                <img src={bkashLogo} alt="bKash" className="w-full h-full object-contain brightness-0 invert opacity-80" />
+                <img src={bkashLogo} alt="bKash" className="w-full h-full object-contain brightness-0 invert opacity-80" loading="lazy" decoding="async" width={28} height={28} />
               </div>
               <h2 className="text-xl font-semibold text-foreground">Bkash</h2>
             </div>
@@ -64,6 +64,8 @@ const SupportMe = () => {
                   alt="Bkash QR Code for 01630591092"
                   className="w-full object-cover object-top"
                   style={{ height: '155%' }}
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
