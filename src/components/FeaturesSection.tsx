@@ -31,7 +31,7 @@ const FeaturesSection = () => {
   const headingY = useTransform(scrollYProgress, [0, 1], ["20px", "-20px"]);
 
   return (
-    <section id="features" ref={ref} className="relative py-24 px-6 snap-section">
+    <section id="features" ref={ref} className="relative pt-24 pb-32 px-6 snap-section">
       <div className="max-w-5xl mx-auto">
         <motion.div
           style={{ y: headingY }}
