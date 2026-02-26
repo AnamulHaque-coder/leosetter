@@ -5,7 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
-import IPadCursor from "@/components/IPadCursor";
+
 import Navbar from "@/components/Navbar";
 import Index from "./pages/Index";
 import SupportMe from "./pages/SupportMe";
@@ -36,7 +36,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <IPadCursor />
+      
       <BrowserRouter>
         <AnimatedRoutes />
       </BrowserRouter>

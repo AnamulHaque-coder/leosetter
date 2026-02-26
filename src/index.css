@@ -83,10 +83,6 @@
     overflow-x: hidden;
   }
 
-  /* Force hide cursor everywhere to prevent flickering on window enter/leave */
-  *, *::before, *::after, html, body {
-    cursor: none !important;
-  }
 }
 
 @layer utilities {
