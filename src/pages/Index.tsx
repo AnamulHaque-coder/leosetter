@@ -8,7 +8,10 @@ import AnimatedBackground from "@/components/AnimatedBackground";
 
 const Index = () => {
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (window.location.hash) {
+      history.replaceState(null, "", window.location.pathname);
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }, []);
 
   return (
