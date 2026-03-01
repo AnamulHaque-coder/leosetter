@@ -16,10 +16,6 @@ const Footer = () => {
           </Link>
         </div>
       </div>
-      <p className="text-xs text-muted-foreground/50 mt-4">
-        Special thanks to{" "}
-        <a href="https://ready.bd/" target="_blank" rel="noopener noreferrer" className="text-gradient font-semibold !no-underline !decoration-transparent hover:opacity-80 transition-opacity" style={{ textDecoration: 'none' }}>ready.bd</a>
-      </p>
     </footer>
   );
 };
