@@ -62,7 +62,7 @@ const SupportMe = () => {
                 <img
                   src={bkashQr}
                   alt="Bkash QR Code for 01630591092"
-                  className="w-full object-cover object-top"
+                  className="w-full object-cover object-center"
                   style={{ height: '155%' }}
                   loading="lazy"
                   decoding="async"
