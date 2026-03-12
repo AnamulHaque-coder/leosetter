@@ -53,8 +53,8 @@ const SupportMe = () => {
                 src={bkashQr}
                 alt="Bkash QR Code for 01630591092"
                 className="w-full rounded-md"
-                loading="lazy"
-                decoding="async"
+                loading="eager"
+                decoding="sync"
               />
             </div>
             <p className="text-xs text-center text-muted-foreground/70">
