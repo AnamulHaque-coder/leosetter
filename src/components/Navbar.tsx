@@ -56,7 +56,7 @@ const Navbar = () => {
           }}
         >
           Leo<span className="text-gradient">Setter</span>
-        </a>
+        </button>
 
         {/* Expanded content */}
         <AnimatePresence mode="popLayout">
