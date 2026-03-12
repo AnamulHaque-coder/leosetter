@@ -58,16 +58,13 @@ const SupportMe = () => {
               <p><span className="text-foreground font-medium">Account Type:</span> Personal</p>
             </div>
             <div className="rounded-xl overflow-hidden p-3 bg-white/5 border border-white/10 flex justify-center max-w-[200px] mx-auto w-full">
-              <div className="overflow-hidden rounded-md" style={{ aspectRatio: '1/1', width: '100%' }}>
-                <img
-                  src={bkashQr}
-                  alt="Bkash QR Code for 01630591092"
-                  className="w-full object-cover object-center"
-                  style={{ height: '155%' }}
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
+              <img
+                src={bkashQr}
+                alt="Bkash QR Code for 01630591092"
+                className="w-full rounded-md"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             <p className="text-xs text-center text-muted-foreground/70">
               Scan with the Bkash app to send money
