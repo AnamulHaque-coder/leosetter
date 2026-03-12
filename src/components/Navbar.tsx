@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Github } from "lucide-react";
+import { Github, User, Heart } from "lucide-react";
 import { useState, useEffect, useCallback, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -83,9 +83,46 @@ const Navbar = () => {
               </a>
               <button
                 onClick={() => navigate('/about')}
-                className="px-4 py-2 rounded-[16px] text-sm text-[hsl(0_0%_100%/0.55)] hover:text-foreground hover:bg-[hsl(0_0%_100%/0.08)] transition-all whitespace-nowrap"
+                className="flex items-center gap-1.5 px-4 py-2 rounded-[16px] text-sm text-[hsl(0_0%_100%/0.55)] hover:text-foreground hover:bg-[hsl(0_0%_100%/0.08)] transition-all whitespace-nowrap"
               >
+                <User className="w-3.5 h-3.5" />
                 About
+              </button>
+              <button
+                onClick={() => navigate('/support')}
+                className="flex items-center gap-1.5 px-4 py-2 rounded-[16px] text-sm text-[hsl(0_0%_100%/0.55)] hover:text-foreground hover:bg-[hsl(0_0%_100%/0.08)] transition-all whitespace-nowrap"
+              >
+                <Heart className="w-3.5 h-3.5" />
+                Support
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Collapsed icon buttons */}
+        <AnimatePresence mode="popLayout">
+          {collapsed && (
+            <motion.div
+              key="icons"
+              initial={{ opacity: 0, width: 0 }}
+              animate={{ opacity: 1, width: "auto" }}
+              exit={{ opacity: 0, width: 0 }}
+              transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] }}
+              className="flex items-center gap-1 overflow-hidden"
+            >
+              <button
+                onClick={() => navigate('/about')}
+                className="p-2 rounded-[12px] text-[hsl(0_0%_100%/0.55)] hover:text-foreground hover:bg-[hsl(0_0%_100%/0.08)] transition-all"
+                title="About"
+              >
+                <User className="w-4 h-4" />
+              </button>
+              <button
+                onClick={() => navigate('/support')}
+                className="p-2 rounded-[12px] text-[hsl(0_0%_100%/0.55)] hover:text-foreground hover:bg-[hsl(0_0%_100%/0.08)] transition-all"
+                title="Support"
+              >
+                <Heart className="w-4 h-4" />
               </button>
             </motion.div>
           )}
