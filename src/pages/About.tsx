@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Facebook, Linkedin, ArrowLeft, Code, Rocket, Sparkles } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Github, Facebook, Linkedin, Code, Rocket, Sparkles } from "lucide-react";
 
 import AnimatedBackground from "@/components/AnimatedBackground";
 import profilePhoto from "@/assets/profile-photo.jpg";

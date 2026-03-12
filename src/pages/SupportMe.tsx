@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import AnimatedBackground from "@/components/AnimatedBackground";
 import AnimatedBackground from "@/components/AnimatedBackground";
 
 import bkashQr from "@/assets/bkash-qr.jpg";
