@@ -24,7 +24,7 @@ const SupportMe = () => {
           <div className="glass-card rounded-2xl p-6 flex flex-col gap-4">
             <div className="flex items-center gap-3 mb-1">
               <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 overflow-hidden p-1.5">
-                <img src={eblLogo} alt="Eastern Bank Limited" className="w-full h-full object-contain brightness-0 invert opacity-80" loading="lazy" decoding="async" width={28} height={28} />
+                <img src={eblLogo} alt="Eastern Bank Limited" className="w-full h-full object-contain brightness-0 invert opacity-80" loading="eager" decoding="sync" width={28} height={28} />
               </div>
               <h2 className="text-xl font-semibold text-foreground">Bank Transfer</h2>
             </div>
