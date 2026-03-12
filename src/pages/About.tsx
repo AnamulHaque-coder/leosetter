@@ -57,8 +57,7 @@ const About = () => {
       <div className="min-h-screen bg-background overflow-x-hidden w-full max-w-[100vw] animated-bg">
         <AnimatedBackground />
 
-        <div className="relative z-10 max-w-3xl mx-auto px-6 py-16">
-        <div className="pt-8" />
+        <div className="relative z-10 max-w-3xl mx-auto px-6 pt-24 pb-16">
 
           {/* Hero section */}
           <motion.div

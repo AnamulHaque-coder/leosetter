@@ -10,8 +10,7 @@ const SupportMe = () => {
       <AnimatedBackground />
       
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6 py-16">
-        <div className="pt-8" />
+      <div className="relative z-10 max-w-4xl mx-auto px-6 pt-24 pb-16">
 
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
           <span className="sunset-text">Support Me</span>

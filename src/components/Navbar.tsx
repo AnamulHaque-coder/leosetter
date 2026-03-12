@@ -46,8 +46,8 @@ const Navbar = () => {
         }}
       >
         {/* Logo — always visible */}
-        <a
-          href="#"
+        <button
+          onClick={() => navigate('/')}
           className="flex items-center rounded-[16px] font-semibold tracking-tight text-foreground hover:bg-[hsl(0_0%_100%/0.08)] whitespace-nowrap will-change-[font-size,padding]"
           style={{
             fontSize: collapsed ? 13 : 14,
@@ -56,7 +56,7 @@ const Navbar = () => {
           }}
         >
           Leo<span className="text-gradient">Setter</span>
-        </a>
+        </button>
 
         {/* Expanded content */}
         <AnimatePresence mode="popLayout">
