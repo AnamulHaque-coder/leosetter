@@ -1,5 +1,4 @@
 import AnimatedBackground from "@/components/AnimatedBackground";
-import AnimatedBackground from "@/components/AnimatedBackground";
 
 import bkashQr from "@/assets/bkash-qr.jpg";
 import eblLogo from "@/assets/ebl-logo.png";
