@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
 import AnimatedBackground from "@/components/AnimatedBackground";
 
 import bkashQr from "@/assets/bkash-qr.jpg";
@@ -13,13 +11,7 @@ const SupportMe = () => {
       
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 py-16">
-        <Link
-          to="/"
-          className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-10"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          Back to Home
-        </Link>
+        <div className="pt-8" />
 
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
           <span className="sunset-text">Support Me</span>

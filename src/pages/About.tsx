@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Facebook, Linkedin, ArrowLeft, Code, Rocket, Sparkles } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Github, Facebook, Linkedin, Code, Rocket, Sparkles } from "lucide-react";
 
 import AnimatedBackground from "@/components/AnimatedBackground";
 import profilePhoto from "@/assets/profile-photo.jpg";
@@ -59,13 +58,7 @@ const About = () => {
         <AnimatedBackground />
 
         <div className="relative z-10 max-w-3xl mx-auto px-6 py-16">
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-10"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Back to Home
-          </Link>
+        <div className="pt-8" />
 
           {/* Hero section */}
           <motion.div
