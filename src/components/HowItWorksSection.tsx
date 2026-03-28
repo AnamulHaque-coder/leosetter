@@ -2,9 +2,9 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 const steps = [
-  { step: "01", title: "Open your image", description: "Select any supported image file." },
-  { step: "02", title: "Inspect & edit", description: "Browse all metadata fields and modify what you need." },
-  { step: "03", title: "Export", description: "Save the updated image with your changes applied instantly." },
+  { step: "01", title: "Open a folder", description: "Browse to a directory of images and load them all at once." },
+  { step: "02", title: "Select & edit", description: "Click any image to view its metadata. Edit Title, Tags, GPS, and more — or pick coordinates from the interactive map." },
+  { step: "03", title: "Save changes", description: "Preview staged changes, then write all edits to disk in one click." },
 ];
 
 const HowItWorksSection = () => {

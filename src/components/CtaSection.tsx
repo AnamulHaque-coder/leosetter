@@ -31,7 +31,7 @@ const CtaSection = () => {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="text-muted-foreground mb-8 max-w-lg mx-auto"
           >
-            Star the repo, contribute, or just start using it. It's free and open source forever.
+            Star the repo, open a feature request, contribute code, or just download and start using it. Free and open source — forever.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 15 }}
