@@ -3,12 +3,12 @@ import { Eye, Pencil, Trash2, Lock, Cpu, FileImage } from "lucide-react";
 import { useRef } from "react";
 
 const features = [
-  { icon: <Eye className="w-6 h-6" />, title: "View Metadata", description: "Inspect all EXIF, IPTC, and XMP data embedded in your images at a glance." },
-  { icon: <Pencil className="w-6 h-6" />, title: "Edit Fields", description: "Modify any metadata field — from GPS coordinates to copyright info — with precision." },
-  { icon: <Trash2 className="w-6 h-6" />, title: "Strip All Data", description: "Remove all metadata in one click to protect your privacy before sharing." },
+  { icon: <Eye className="w-6 h-6" />, title: "View Metadata", description: "Inspect all EXIF, IPTC, and XMP data — Title, Subject, Tags, GPS, Rating, Copyright, and more." },
+  { icon: <Pencil className="w-6 h-6" />, title: "Edit Fields", description: "Modify any metadata field with precision. Save and reapply metadata presets across multiple sessions using templates." },
+  { icon: <Trash2 className="w-6 h-6" />, title: "Strip All Data", description: "Remove all metadata in one click. Staged changes are previewed before writing to disk, keeping you safe by default." },
   { icon: <Lock className="w-6 h-6" />, title: "Privacy First", description: "Everything runs locally. Your images never leave your machine." },
-  { icon: <Cpu className="w-6 h-6" />, title: "Blazing Fast", description: "Optimized processing engine handles large batches without breaking a sweat." },
-  { icon: <FileImage className="w-6 h-6" />, title: "Multi-Format", description: "Supports JPEG, TIFF, WebP, and more popular image formats." },
+  { icon: <Cpu className="w-6 h-6" />, title: "Blazing Fast", description: "Optimized processing powered by ExifTool under the hood. Handles large batches without breaking a sweat." },
+  { icon: <FileImage className="w-6 h-6" />, title: "Multi-Format", description: "Supports JPEG, TIFF, WebP, PNG, and more popular image formats out of the box." },
 ];
 
 const cardVariants = {

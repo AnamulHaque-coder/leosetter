@@ -38,7 +38,7 @@ const HeroSection = () => {
         >
           <div className="glass-card inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 text-sm text-muted-foreground">
             <Zap className="w-3.5 h-3.5 text-primary" />
-            Open Source Image Metadata Tool
+            Free & Open Source Metadata Editor
           </div>
         </motion.div>
 
@@ -66,8 +66,7 @@ const HeroSection = () => {
           transition={{ duration: 0.9, delay: 0.5 }}
           className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          View, edit, and strip EXIF, IPTC, and XMP metadata from your images.
-          Fast, private, and completely open source.
+          Batch view, edit, and strip EXIF, IPTC, and XMP metadata for entire folders of images — all from a clean, dark-themed UI. Fast, private, and completely open source.
         </motion.p>
 
         <motion.div
